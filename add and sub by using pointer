@@ -1,0 +1,30 @@
+// add and sub by using pointer .
+#include <stdio.h>     
+
+/* by using stdlib.h header file .
+sub = abs(*a-*b);    by using this you may not use if function */
+
+
+void update(int *a,int *b) {
+    // Complete this function
+    int add , sub;
+    add=*a+*b;
+    sub=*a-*b;
+    if(sub<0)
+    {
+        sub=-sub;    //for ex:make -1 = 1 so in other words making negative number as positive number by applying the modulus
+    }
+    *a= add;
+    *b= sub;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
